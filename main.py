@@ -9,7 +9,6 @@ point = None
 bbox = None
 is_selected = False
 select_method_text = "Select a method for tracking"
-box_size = 20
 
 
 def select_point(event, x, y, flags, param):
@@ -77,7 +76,7 @@ def main():
                         (100, 80), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
             bbox = cv2.selectROI("Set Bounding Box", first_frame, fromCenter=False, showCrosshair=True)
             x, y, w, h = bbox
-            point = (x - box_size // 2, y - box_size // 2, box_size, box_size)
+            point = (x + w // 2, y + h // 2, w, h)
             if cv2.waitKey(1) & 0xFF == 27:
                 break
             is_selected = True
