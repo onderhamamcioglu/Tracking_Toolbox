@@ -73,7 +73,7 @@ def main():
         cv2.namedWindow("Set Bounding Box", cv2.WINDOW_NORMAL)
         while not is_selected:
             cv2.putText(first_frame,
-                        'Select a ROI and then press SPACE or ENTER button! Cancel the selection process by pressing c button!',
+                        'Draw a bounding box and then press SPACE or ENTER button! Cancel by pressing C or ESC button!',
                         (100, 80), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
             bbox = cv2.selectROI("Set Bounding Box", first_frame, fromCenter=False, showCrosshair=True)
             x, y, w, h = bbox
